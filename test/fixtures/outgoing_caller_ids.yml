@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  status: MyString
+  validation_code: MyString
+  sid: MyString
+
+two:
+  status: MyString
+  validation_code: MyString
+  sid: MyString

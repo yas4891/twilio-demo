@@ -1,0 +1,27 @@
+<h1>Listing outgoing_caller_ids</h1>
+
+<table>
+  <tr>
+    <th>Status</th>
+    <th>Validation code</th>
+    <th>Sid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @outgoing_caller_ids.each do |outgoing_caller_id| %>
+  <tr>
+    <td><%= outgoing_caller_id.status %></td>
+    <td><%= outgoing_caller_id.validation_code %></td>
+    <td><%= outgoing_caller_id.sid %></td>
+    <td><%= link_to 'Show', outgoing_caller_id %></td>
+    <td><%= link_to 'Edit', edit_outgoing_caller_id_path(outgoing_caller_id) %></td>
+    <td><%= link_to 'Destroy', outgoing_caller_id, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Outgoing caller', new_outgoing_caller_id_path %>

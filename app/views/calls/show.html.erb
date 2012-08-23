@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>To:</b>
+  <%= @call.to %>
+</p>
+
+<p>
+  <b>Template:</b>
+  <%= @call.template %>
+</p>
+
+<p>
+  <b>Sid:</b>
+  <%= @call.sid %>
+</p>
+<p>
+  <b>Gathered numbers:</b>
+  <%= @call.gathered_numbers %>
+</p>
+<% if(@call.recording_url)%>
+<p>
+  <b>Recording URL (duration):</b>
+  <%= link_to "#{@call.recording_url} (#{@call.recording_duration})", @call.recording_url  %>
+</p>
+<% end%>
+
+<%= link_to 'Edit', edit_call_path(@call) %> |
+<%= link_to 'Back', calls_path %>

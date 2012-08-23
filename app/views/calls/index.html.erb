@@ -1,0 +1,29 @@
+<h1>Listing calls</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>To (State)</th>
+    <th>Template</th>
+    <th>Price</th>
+    <th>Sid</th>
+    <th>Recording</th>
+    <th>Transcription</th>
+    <th></th>
+  </tr>
+
+<% @calls.each do |call| %>
+  <tr>
+    <td><%= call.to %> (<span id="state_<%= call.id %>"><%= call.status %></span>)</td>
+    <td><%= call.template %></td>
+    <td><%= call.price %></td>
+    <td><%= call.sid %></td>
+    <td><%= link_to("Yes", call.recording_url) if call.recording_url %></td>
+    <td><%= call.transcription_text if call.transcription_text %></td>
+    <td><%= link_to 'Show', call %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Call', new_call_path, {:class => 'btn btn-primary'} %>

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Phone number:</b>
+  <%= @outgoing_caller_id.phone_number %>
+</p>
+<p>
+  <b>Friendly Name:</b>
+  <%= @outgoing_caller_id.friendly_name %>
+</p>
+<p>
+  <b>Status:</b>
+  <%= @outgoing_caller_id.status %>
+</p>
+
+<p>
+  <b>Validation code:</b>
+  <%= @outgoing_caller_id.validation_code %>
+</p>
+
+<p>
+  <b>Sid:</b>
+  <%= @outgoing_caller_id.sid %>
+</p>
+
+
+<%= link_to 'Edit', edit_outgoing_caller_id_path(@outgoing_caller_id) %> |
+<%= link_to 'Back', outgoing_caller_ids_path %>

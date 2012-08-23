@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Response>
+	<Say voice="man" language="en" loop="1">
+		Hello Folks! This is our awesome voicemail for Munich Rubyshift Meetup. Please leave your message after the tone!
+	</Say>
+	
+	<Record 
+		timeout="2" <% # after x seconds of silence end recording 
+					%> 
+		maxLength="15" <% #end after x seconds of recording 
+						%>  
+		action="<%= "#{@request_url}/calls/#{@call.id}/recording"%>" method="POST">
+	
+		
+	</Record>
+</Response>
+

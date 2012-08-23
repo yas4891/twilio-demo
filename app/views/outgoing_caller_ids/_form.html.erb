@@ -1,0 +1,26 @@
+<%= form_for(@outgoing_caller_id) do |f| %>
+  <% if @outgoing_caller_id.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@outgoing_caller_id.errors.count, "error") %> prohibited this outgoing_caller_id from being saved:</h2>
+
+      <ul>
+      <% @outgoing_caller_id.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :friendly_name %><br />
+    <%= f.text_field :friendly_name %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Verify Number", {:class => 'btn btn-primary'}%>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+
+<%= form_for(@sms) do |f| %>
+  <% if @sms.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sms.errors.count, "error") %> prohibited this SMS from being saved:</h2>
+
+      <ul>
+      <% @sms.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :direction, value: 'out' %>
+  <div class="field">
+    <%= f.label :number %><br />
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Send SMS", {:class => 'btn btn-primary'} %>
+  </div>
+<% end %>
+

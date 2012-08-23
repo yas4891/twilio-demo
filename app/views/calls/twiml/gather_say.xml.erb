@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Response>
+	<Gather timeout="10" action="<%= "#{@request_url}/calls/#{@call.id}/gather"%>" method="POST">
+		<Say voice="man" language="de" loop="1">
+			Hallo Rubyshift! Bitte gib ein paar Zahlen über die Tastatur des Telefons ein.  
+			Du hast dazu 10 Sekunden Zeit. 
+		</Say>
+	</Gather>
+</Response>
+

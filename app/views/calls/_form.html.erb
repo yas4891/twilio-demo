@@ -1,0 +1,26 @@
+<%= form_for(@call) do |f| %>
+  <% if @call.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@call.errors.count, "error") %> prohibited this call from being saved:</h2>
+
+      <ul>
+      <% @call.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :to, "Phone number" %><br />
+    <%= f.text_field :to %>
+  </div>
+  <div class="field">
+    <%= f.label :template %><br />
+    <%= select_tag "call[template]", options_for_select(@templates.collect {|t| [t, t]})
+    %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Call that phone", {:class => 'btn btn-primary'} %>
+  </div>
+<% end %>

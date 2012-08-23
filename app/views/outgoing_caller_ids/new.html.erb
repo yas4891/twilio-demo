@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="span10 offset1">
+		<h1>Verify a phone number</h1>
+<br />
+		<%= render 'form' %>
+		
+		<%= link_to 'Back', outgoing_caller_ids_path, {:class => 'btn btn-inverse'} %>
+
+
+</div>
+</div>
+<br />
+<br />
+<div class="row">
+	<div class="span10 offset1 alert alert-info">
+			To verify a phone number: 
+			<pre>
+url = "#{@request_url}/outgoing_caller_ids/#{ @outgoing_caller_id.id}/status_update"
+response = @twilio_client.account.outgoing_caller_ids.create(
+  phone_number: @outgoing_caller_id.phone_number,
+  status_callback: url,
+  friendly_name: @outgoing_caller_id.friendly_name,
+  call_delay: 5
+)
+	</div>
+</div>
